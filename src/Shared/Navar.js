@@ -8,24 +8,31 @@ const Navar = () => {
 
     const pages = <>
 
-        <li className='ml-8 m-r-2 text-[16px] '><Link>Shop</Link></li>
+        <li className='ml-8 m-r-2 text-[16px] '><Link to='/'>Home</Link></li>
+        <li className='ml-8  text-[16px] '><Link>Shop</Link></li>
         <li className='mx-2'><Link>Seller</Link></li>
         <li className='mx-2'><Link>Blogs</Link></li>
         <li className='mx-2'><Link>About</Link></li>
         <li className='mx-2'><Link>Contact</Link></li>
-        <li className='mx-2'><Link>Pages</Link></li>
+    </>
+
+    const options = <>
+        <option disabled selected>Categories</option>
+        <option><Link to='/categories'>AllCategores</Link></option>
+        <option>Mobile</option>
+
+        <option>Laptop</option>
+        <option> Watch</option>
+        <option> Shoes</option>
+        <option>Garments</option>
+
     </>
     const form = <>
         <form className='flex'>
             <input type="text" placeholder="Type here" className="input input-bordered rounded-none w-3/5 max-w-xs" />
             <div className="form-control w-full max-w-xs">
                 <select className="select rounded-none select-bordered w-full">
-                    <option disabled selected>Pick one</option>
-                    <option>Star Wars</option>
-                    <option>Harry Potter</option>
-                    <option>Lord of the Rings</option>
-                    <option>Planet of the Apes</option>
-                    <option>Star Trek</option>
+                    {options}
                 </select>
             </div>
             <FaSearch className='bg-accent text-5xl'></FaSearch>
@@ -48,7 +55,7 @@ const Navar = () => {
         </div>
     </>
 
-    
+
 
 
 
@@ -108,12 +115,23 @@ const Navar = () => {
                     </div>
 
                     <div className='hidden lg:flex '>
-                        <select className="select select-info rounded-b-none mt-4  w-[300px] ">
-                            <option className='text-xl' disabled selected>Select language</option>
-                            <option className='text-xl'>English</option>
-                            <option className='text-xl'>Japanese</option>
-                            <option className='text-xl'>Italian</option>
-                        </select>
+                        <div className="dropdown rounded-b-none mt-4  ] ">
+                            <label tabIndex={0} className="bg-neutral px-20 pb-4 pt-4 rounded-t-lg m-1 hover:bg-accent">Categories</label>
+                            <ul tabIndex={0} className="dropdown-content menu ml-1 mt-10 p-2 shadow bg-base-100  w-[232px]">
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-secondary' to='/categories'>All Categories</Link>
+                                <ul className='h-[.1px] bg-accent'></ul>
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-slate-100' to='/categories'>Laptop</Link>
+                                <ul className='h-[.1px] bg-accent'></ul>
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-secondary' to='/categories'>Mobile</Link>
+                                <ul className='h-[.1px] bg-accent'></ul>
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-secondary' to='/categories'>Kids Toys</Link>
+                                <ul className='h-[.1px] bg-accent'></ul>
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-secondary' to='/categories'>Garments</Link>
+                                <ul className='h-[.1px] bg-accent'></ul>
+                                <Link className='pl-5 py-2  border-collapse rounded-sm hover:bg-secondary' to='/categories'>Watch</Link>
+
+                            </ul>
+                        </div>
                     </div>
                     <div className='md:hidden'>
                         {
@@ -130,6 +148,11 @@ const Navar = () => {
                     <div className="navbar-end hidden lg:flex">
                         <a className="btn rounded-sm bg-warning border-none text-base-100 ">Become Seller</a>
                     </div>
+                    <label  htmlFor="categoriesDrawer" tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+
+
 
                 </div>
             </div>
