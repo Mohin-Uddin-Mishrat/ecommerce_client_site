@@ -15,19 +15,19 @@ module.exports = {
 
           "primary": "#661AE6",
 
-          "secondary": "#D926AA",
+          "secondary": "#FFBB38",
 
           "accent": "#1FB2A5",
 
-          "neutral": "#191D24",
+          "neutral": "#FFFFFF",
 
-          "base-100": "#2A303C",
+          "base-100": "#F8F8F8",
 
           "info": "#3ABFF8",
 
           "success": "#36D399",
 
-          "warning": "#FBBD23",
+          "warning": "#121212",
 
           "error": "#f8fafc",
         },
